@@ -23,10 +23,20 @@ public class JdbcTest {
 //		System.out.println(count + "건 입력되었습니다.");
 		
 		/*******UPDATE*******/
-		role.setRoleId(201);
-		role.setDescription("PROGRAMMER");
+//		role.setRoleId(201);
+//		role.setDescription("PROGRAMMER");
+//		
+//		int count = roleDao.update(role);
+//		System.out.println(count + "건 수되었습니다.");
 		
-		int count = roleDao.update(role);
+		/*******SELECT BY ID*******/
+		Role resultRole = roleDao.selectById(201);
+		System.out.println(resultRole+"이 조회되었습니다.");
+		
+		/*******DELETE BY ID*******/
+		int deleteCount = roleDao.deleteById(500);
+		System.out.println(resultRole+"건 삭제되었습니다.");
+		System.out.println(roleDao.selectById(500));
 		
 	}
 
